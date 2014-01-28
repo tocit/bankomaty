@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Zemì', 'Bankomatù na 100 tisíc obyvatel'],
+          [{v: 'Czech Republic', f: 'Èeská republika'}, {v: 45.32, f: '45,32 [celkem 4 299]'}],
+          [{v: 'Slovakia', f: 'Slovensko'}, {v: 54.54, f: '54,54 [celkem 2 536]'}],
+          [{v: 'Poland', f: 'Polsko'}, {v: 56.92, f: '56,92 [celkem 18 665]'}],
+          [{v: 'Hungary', f: 'Maïarsko'}, {v: 57.63, f: '57,63 [celkem 4 907]'}],
+          [{v: 'Bulgaria', f: 'Bulharsko'}, {v: 92.84, f: '92,84 [celkem 5 792]'}],
+          [{v: 'Belgium', f: 'Belgie'}, {v: 93.12, f: '93,12 [celkem 12 000]'}],
+          [{v: 'Switzerland', f: 'Švýcarsko'}, {v: 99.19, f: '99,19 [celkem 6 743]'}],
+          [{v: 'Slovenia', f: 'Slovinsko'}, {v: 101.26, f: '101,26 [celkem 1 845]'}],
+          [{v: 'France', f: 'Francie'}, {v: 109, f: '109 [celkem 57 824]'}],
+          [{v: 'Austria', f: 'Rakousko'}, {v: 115.38, f: '115,38 [celkem 7 794]'}],
+          [{v: 'Greece', f: 'Øecko'}, {v: 71.19, f: '71,19 [celkem 6 822]'}],
+          [{v: 'Germany', f: 'Nìmecko'}, {v: 118.77, f: '118,77 [celkem 60 315]'}],
+          [{v: 'Sweden', f: 'Švédsko'}, {v: 43.1, f: '43,1 [celkem 3 546]'}],
+          [{v: 'Finland', f: 'Finsko'}, {v: 35.33, f: '35,33 [celkem 1 655]'}],
+          [{v: 'Romania', f: 'Rumunsko'}, {v: 60.64, f: '60,64 [celkem 10 878]'}],
+          [{v: 'Spain', f: 'Španìlsko'}, {v: 138.15, f: '138,15 [celkem 55 234]'}],
+          [{v: 'Italy', f: 'Itálie'}, {v: 97.11, f: '97,11 [celkem 47 327]'}],
+          [{v: 'Norway', f: 'Norsko'}, {v: 52.82, f: '52,82 [celkem 2 243]'}],
+          [{v: 'Great Britain', f: 'Británie'}, {v: 124.28, f: '124,28 [celkem 66 732]'}],
+          [{v: 'Portugal', f: 'Portugalsko'}, {v: 185.36, f: '185,36 [celkem 13 151]'}]          
+        ]);
+
+        var options = {
+          region: '150',
+          colorAxis: {colors: ['#fee6ce', '#e6550d']}
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    };
+    </script>
+  </head>
+  <body style="margin:0px">
+    <div id="chart_div" style="width: 670px; height: 420px;"></div>
+  </body>
+</html>
